@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_test_tests",
+  "info": {
+    "displayName": "test",
+    "icon": "address-book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

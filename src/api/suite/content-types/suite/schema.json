@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "suites",
+  "info": {
+    "singularName": "suite",
+    "pluralName": "suites",
+    "displayName": "Suite",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "number": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "boxes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::box.box",
+      "mappedBy": "suite"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "suite"
+    },
+    "client": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client.client",
+      "mappedBy": "suite"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "boxes",
+  "info": {
+    "singularName": "box",
+    "pluralName": "boxes",
+    "displayName": "box",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sender": {
+      "type": "string",
+      "required": true
+    },
+    "tracking": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "decimal"
+    },
+    "received": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "suite": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::suite.suite",
+      "private": true,
+      "inversedBy": "boxes"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "box"
+    }
+  }
+}

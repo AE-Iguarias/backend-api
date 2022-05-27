@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tipos",
+  "info": {
+    "singularName": "tipo",
+    "pluralName": "tipos",
+    "displayName": "Tipo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "jobs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job.job",
+      "mappedBy": "tipo"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    }
+  }
+}
